@@ -18,7 +18,7 @@ There are a lot of repositories where you can contribute. I choose to list these
 
 ## TL/DR;
 
-* I list [ten ways how you can contribute]() to PowerShell on GitHub
+* I list [ten ways how you can contribute to PowerShell](powershell_contributing.md) on GitHub
 * I share [details about contributing to the PowerShell/PowerShell repo]()
 
 ## Why contribute
