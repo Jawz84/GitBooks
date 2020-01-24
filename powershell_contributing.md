@@ -2,11 +2,17 @@
 
 ## Why this blog
 
-I found [the documentation](https://github.com/PowerShell/PowerShell/blob/master/.github/CONTRIBUTING.md) on how to contribute to PowerShell/PowerShell a bit daunting. The more links I followed, the more detailed and complex everything got. At that point I felt I was not ready to contribute. I did contribute anyway eventually. And I realised there may be more people willing to contribute, but don't know where to start, and there does not seem to be a guide of how to start contributing to PowerShell in an easy way. Also, there are ways to contribute apart from contributing C\# code.
+I found [the documentation](https://github.com/PowerShell/PowerShell/blob/master/.github/CONTRIBUTING.md) on how to contribute to PowerShell/PowerShell a bit daunting. The more links I followed, the more detailed and complex everything got. At that point I felt I was not ready to contribute. But eventually, I did. And I realised there may be more people willing to contribute to PowerShell, but don't know where to start, and there does not seem to be a guide of how to do so in an easy way. Also, there are ways to contribute apart from writing C\# code.
+
+## Why contribute
+
+If you use PowerShell and you like it, chances are you have gained benefit from it. Why not give back? You may learn a thing or two on the way, and the PowerShell OSS community is very helpful and friendly too.
+
+If you would like a more thorough reasoning, I can recommend [Joel's blogpost on this](https://vexx32.github.io/2019/01/03/Contributing-Open-Source/).
 
 ## How
 
-You can contribute by lending your time and expertise. There are so many ways to do so: Blogging, speaking, teaching, sharing code, writing modules, or helping others on forums/channels \(to name a few\). In this blog I want to focus on contributing to the PowerShell language directly, on GitHub.
+You can contribute by lending your time and expertise. There are so many ways to do so: blogging, speaking, teaching, sharing code, writing modules, or helping others on forums/channels \(to name a few\). In this blog I want to focus on contributing to the PowerShell language directly, on GitHub.
 
 ## Where
 
@@ -20,12 +26,6 @@ There are a lot of repositories where you can contribute. I choose to list these
 
 * I list [ten ways how you can contribute to PowerShell](powershell_contributing.md#ten-ways-to-contribute) on GitHub
 * I share [details about contributing to the PowerShell/PowerShell repo](powershell_contributing.md#details-about-contributing-to-the-powershellpowershell-repo)
-
-## Why contribute
-
-If you use PowerShell and you like it, chances are you have gained benefit from it. Why not give back? You may learn a thing or two on the way, and the PowerShell OSS community is very helpful and friendly too.
-
-If you would like a more thorough reasoning, I can recommend [Joel's blogpost on this](https://vexx32.github.io/2019/01/03/Contributing-Open-Source/).
 
 ## Ten ways to contribute
 
@@ -58,7 +58,7 @@ When in doubt, just share what you encountered to check if it's a bug in PowerSh
 * The [PowerShell IRC channel](https://poshcode.org/#irc)\*
 * The [PowerShell/PowerShell Gitter channel](https://gitter.im/PowerShell/PowerShell)
 
-\*\) Discord, Slack and IRC are bridged via a channel called \#Bridge. Read more about this on .
+\*\) Discord, Slack and IRC are bridged via a channel called \#Bridge. Read more about this over at [PoshCode](http://poshcode.org/).
 
 ### 2. Help confirm bugs
 
@@ -110,7 +110,7 @@ The full process is explained here: [https://github.com/PowerShell/powershell-rf
 > * A headset
 > * A camera
 
-Every month, there is a call with PowerShell Team members and community members are invited! You can find the join link, as well as transcripts/youtube recordings of previous calls here: [https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall/](https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall/)
+Every month, there is a call with PowerShell Team members and community members are invited! You can find the join link, as well as transcripts/YouTube recordings of previous calls here: [https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall/](https://github.com/PowerShell/PowerShell-RFC/tree/master/CommunityCall/)
 
 Goal of the meeting is sharing roadmap/release info, and discussing RFC's. You can join in, ask questions and let your voice be heard. For example, if there is an RFC you have commented on, you can explain your view.
 
@@ -128,7 +128,7 @@ The maintainers will look at your idea and let you know what they think. All gen
 
 Do take the time to find out if your idea has been proposed before and what was decided and why. You can filter on the label 'Issue-Enhancement'.
 
-In some cases it may be a good move to 'test' your idea against a few people first, before taking the time to fully explain what you have in mind in an issue, a great place to do so would be the [PowerShell Discord/Slack/IRC channel](https://poshcode.org).
+In some cases it may be a good move to 'test' your idea against a few people first, before taking the time to fully explain what you have in mind in an issue, a great place to do so would be the [PowerShell Discord/Slack/IRC channel](http://poshcode.org).
 
 ### 6. Contribute Help content
 
@@ -152,7 +152,7 @@ To do small contributions like correcting typos, just navigate to that file, cli
 
 For bigger contributions, you are better off cloning your fork locally to your computer. This enables you to use VSCode and other editing tools. A guide on how to do that can be found [here](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/contributing/1-GET-STARTED.md#making-major-edits-to-existing-topics).
 
-With more examples, less typos and clearer wording, PowerShell can be easier to learn and use for everyone!
+With more examples, fewer typos and clearer wording, PowerShell can be easier to learn and use for everyone!
 
 ### 7. Write Pester tests
 
@@ -174,9 +174,9 @@ Many Cmdlets could use better or more extensive tests to verify they keep workin
 
 As always, if you want to start working on something in the repo, signal the maintainers what your intentions are, by saying which task you want to take on in the relevant issue. If no issue exists for the work you want to do, create one first.
 
-When there are more/better tests for Cmdlets, you can possibly prevent future bugs!
+By creating or improving tests for Cmdlets, you could be preventing future bugs!
 
-See also [Details about contributing to the PowerShell/PowerShell repo](), especially the section on [how to run tests]().
+See also [Details about contributing to the PowerShell/PowerShell repo](powershell_contributing.md#details-about-contributing-to-the-powershellpowershell-repo).
 
 ### 8. Write C\# code for PowerShell
 
@@ -202,7 +202,7 @@ You can use VSCode with the [C\# extension](https://marketplace.visualstudio.com
 
 #### Find code for a Cmdlet
 
-There is a lot of code in PowerShell. So where do you find the code you need to edit in order to solve the issue you picked? If you are are looking for the code for a specific Cmdlet, let's say `Get-Host`, you could search the codebase for 'Get-Host' and filter only \*.cs files, but you would not find it. You will find if you search for 'Get, "Host' and filter \*.cs files only. This is because Cmdlets names in C\# are declared like this:
+There is a lot of code in PowerShell. So where do you find the code you need to edit in order to solve the issue you picked? If you are looking for the code for a specific Cmdlet, let's say `Get-Host`, you could search the codebase for 'Get-Host' and filter only \*.cs files, but you would not find it. You will find if you search for 'Get, "Host' and filter \*.cs files only. This is because Cmdlets names in C\# are declared like this:
 
 ```text
 [Cmdlet(VerbsCommon.Get, "Host" /* abbreviated */ )]
@@ -229,7 +229,7 @@ If you are not super familiar with C\# these tips may help you:
 
 > Tip: If you want to learn more about VSCode debugging for PowerShell, you can read more [here on the Microsoft scripting blog](https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/), or watch [this video](https://youtu.be/cSbIXmlkr8o) from Tyler Leonhardt at PSconfEU 2019. The same principles work for the C\# extension, as well as for Visual Studio.
 
-See also [Details about contributing to the PowerShell/PowerShell repo]().
+See also [Details about contributing to the PowerShell/PowerShell repo](powershell_contributing.md#details-about-contributing-to-the-powershellpowershell-repo).
 
 ### 9. Write C\# xUnit tests
 
@@ -255,7 +255,7 @@ If that is all set, you can start a test run for xUnit tests:
 
 It will output to the file with the name you have specified to the folder `.\test\xUnit`, in xUnit format.
 
-See also [Details about contributing to the PowerShell/PowerShell repo]().
+[Details about contributing to the PowerShell/PowerShell repo](powershell_contributing.md#details-about-contributing-to-the-powershellpowershell-repo).
 
 ### 10. Write an RFC
 
@@ -268,7 +268,7 @@ See also [Details about contributing to the PowerShell/PowerShell repo]().
 
 Anyone in the community can write a proposal as a [Request For Comments](https://github.com/PowerShell/PowerShell-RFC) \(RFC\), and see what the committee and the community think.
 
-If you have an idea that is bigger than just an Issue, you can consider writing a proposal. The first step to that is to file a feature request-type issue, so that the PowerShell Team can gauge whether there's interest in the requested change and there's an opportunity to hammer out a fairly well-rounded first draft. This is because RFCs tend to be longer-form documents, and it can get rather lengthy to review them if changes constantly need to be hashed out during the review process.
+If you have an idea that is bigger than just an Issue, you can consider writing a proposal. The first step to that is to file a feature request-type issue, so that the PowerShell Team can gauge whether there's interest in the requested change and there's an opportunity to hammer out a fairly well-rounded first draft. This is because RFC's tend to be longer-form documents, and it can get rather lengthy to review them if changes constantly need to be hashed out during the review process.
 
 Be sure to check the list of passed and rejected RFC's first. You can read about the process [here](https://github.com/PowerShell/PowerShell-RFC/blob/master/RFC0000-RFC-Process.md).
 
@@ -278,7 +278,7 @@ Examples of past RFC's:
 * Experimental-Accepted: [ForEach-Object -Parallel Cmdlet](https://github.com/PowerShell/PowerShell-RFC/blob/master/4-Experimental-Accepted/RFC0044-ForEach-Parallel-Cmdlet.md)
 * Final: [Obsoleting Send-MailMessage](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0042-Send-MailMessage.md)
 
-RFC's are discussed at the monthly community call, and are open for comments for about two months, or longer as the committee sees fit.
+RFC's are discussed in the monthly community call, and are open for comments for about two months, or longer as the committee sees fit.
 
 > Tip: The Committee and the PowerShell Team members are separate; currently all Committee members are either current or past members of the PowerShell Team, but not everyone on the team is on the Committee. There is a desire to work out a process for adding community members to the Committee at some point in the future.
 
@@ -366,7 +366,7 @@ For specific tips about how to use Pester within the PowerShell repo, be sure to
 
 ### Updating your fork
 
-So you have forked one of the GitHub repos, cloned it, tried stuff, but never created a PR. And now that fork is six months behind its ancester. How to update it? I'll describe how to do this for the PowerShell repo, this works the same for the other repos.
+So you have forked one of the GitHub repos, cloned it, tried stuff, but never created a PR. And now that fork is six months behind its ancestor. How to update it? I'll describe how to do this for the PowerShell repo, this works the same for the other repos.
 
 To update your GitHub fork, you will first update your local clone, and for that, you need to tell your local repository which remote to look to.
 
@@ -380,7 +380,7 @@ To update your GitHub fork, you will first update your local clone, and for that
 
 Make sure you have no uncommitted work on your branch. Stash or revert any uncommitted changes, and checkout to the master branch:
 
-* To stash changes, go `git stash`
+* To stash changes, do `git stash`
 * To checkout master, do `git checkout master`
 
 Now we need to check for changes and pull them in.
@@ -405,9 +405,9 @@ Some manuals will say `rebase` instead of `pull`. Rebasing is the way to tell gi
 
 ### Submitting your contribution
 
-Do small git commits while you work, and don't forget to git push the work on your branch every once in a while. When you are satisfied with your work, you can create a Pull Request. You can create a PR from your own GitHub on the branch you created for you work on this. It helps to reference your original Issue where you asked for guidance what to work on, use a '\#' sign and put the number of your Issue behind it. For example, if your original issue was numbered \#23401, you could start the PR description with 'Closes \#23401'. GitHub recognizes this word 'Closes \#0000' pattern and actually closes this issue for you when the PR is merged. Some other words that GitHub recognizes and have the same effect are: 'fixes' and 'resolves'. See more [here](https://help.github.com/en/github/managing-your-work-on-github/closing-issues-using-keywords). Fill any fields the PR requests from you.
+Do small git commits while you work, and don't forget to `git push` the work on your branch every once in a while. When you are satisfied with your work, you can create a Pull Request. You can create a PR from your own GitHub on the branch you created for your work on this. It helps to reference your original Issue where you asked for guidance what to work on, use a '\#' sign and put the number of your Issue behind it. For example, if your original issue was numbered \#23401, you could start the PR description with 'Closes \#23401'. GitHub recognizes this word 'Closes \#0000' pattern and actually closes this issue for you when the PR is merged. Some other words that GitHub recognizes and have the same effect are: 'fixes' and 'resolves'. See more [here](https://help.github.com/en/github/managing-your-work-on-github/closing-issues-using-keywords). Fill any fields the PR requests from you.
 
-Once you have created a PR, the [automated Continuous Integration \(CI\)](https://github.blog/2015-09-03-protected-branches-and-required-status-checks/) process will start to run. It will run ALL tests, on Windows, Linux and OSX. You can follow the status of the running tests in your PR. It takes around 20 minutes or so to finish. Every time you push a new commit to your branch that you created the PR from, it will trigger a new CI run.
+Once you have created a PR, the [automated Continuous Integration \(CI\)](https://github.blog/2015-09-03-protected-branches-and-required-status-checks/) process will start to run. It will run ALL tests, on Windows, Linux and macOS. You can follow the status of the running tests in your PR. It takes around 20 minutes or so to finish. Every time you push a new commit to your branch that you created the PR from, it will trigger a new CI run.
 
 If you want to signal the maintainers that you are working on stuff, but are not ready yet, you can rename your PR to start with `WIP:` for Work In Progress. When you create a new PR, GitHub offers this as a drop-down option on the Submit button.
 
@@ -422,4 +422,3 @@ Once all the CI checks turn green, and your reviewers are satisfied, your PR wil
 I hope this blog will help you find your way contributing to PowerShell. It's a great language, and an even greater community. This offers all kinds of chances to learn new things, and meet new like-minded people! Please feel free to reach out to me if you have questions. You can [ping me on Twitter](https://www.twitter.com/Jawz_84), or drop me a message on PowerShell.Slack.com. @jawz\_84.
 
 A special thank you goes to Joel \(Sallow\) Francis and Jelle de Graaf for reviewing!
-
