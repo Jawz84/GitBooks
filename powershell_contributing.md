@@ -2,7 +2,7 @@
 
 ## Why this blog
 
-I found [the documentation](https://github.com/PowerShell/PowerShell/blob/master/.github/CONTRIBUTING.md) on how to contribute to PowerShell/PowerShell a bit daunting. The more links I followed, the more detailed and complex everything got. At that point I felt I was not ready to contribute. But eventually, I did. And I realised there may be more people willing to contribute to PowerShell, but don't know where to start, and there does not seem to be a guide of how to do so in an easy way. Also, there are ways to contribute apart from writing C\# code.
+I found [the documentation](https://github.com/PowerShell/PowerShell/blob/master/.github/CONTRIBUTING.md) on how to contribute to PowerShell/PowerShell a bit daunting. The more links I followed, the more detailed and complex everything got. At that point I felt I was not ready to contribute. But eventually, I did. And I realized there may be more people willing to contribute to PowerShell, but don't know where to start, and there does not seem to be a guide of how to do so in an easy way. Also, there are ways to contribute apart from writing C\# code.
 
 ## Why contribute
 
@@ -74,7 +74,7 @@ You can comment in the issue whether or not you could repro it, and on which ver
 
 If a bug is reproducible, it can be tested and fixed. If a bug is not reproducible, more research may be needed. You may be able to help the user who filed the bug with that.
 
-> Tip: Consider 'Watching' the github repo. You'll get a feel for what is going on daily.
+> Tip: Consider 'Watching' the GitHub repo. You'll get a feel for what is going on daily.
 
 ### 3. Comment on language change proposals
 
@@ -307,7 +307,7 @@ When you open the repository with VS Code, it may detect missing extensions. Ins
 
 ### Alternative: develop within a container
 
-VSCode has an extension for working in developement containers. The PowerShell repo supports that. If you use this, the repository will be opened in a Docker container on your system, and all necessary components will be inside the container. VSCode will connect to that container and you can work with it from there.
+VSCode has an extension for working in development containers. The PowerShell repo supports that. If you use this, the repository will be opened in a Docker container on your system, and all necessary components will be inside the container. VSCode will connect to that container and you can work with it from there.
 
 You will need:
 
@@ -336,7 +336,7 @@ In the base of the repository there is a module `build.psm1`, that has all kinds
 
 \(If you want to know which tools are inside, use `Get-Command -Module build`\)
 
-The very first time, you need to set up a few things. To do that, run `Start-PsBootstrap` \(may need sudo/adminstrative privileges, depending on your system. On a docker container, it needs the `-NoSudo` switch\).
+The very first time, you need to set up a few things. To do that, run `Start-PsBootstrap` \(may need sudo/administrative privileges, depending on your system. On a docker container, it needs the `-NoSudo` switch\).
 
 Now use this command to build the pwsh binaries: `Start-PsBuild -Clean`. If you've built the project before, you can just run `Start-PsBuild`.
 
@@ -353,7 +353,7 @@ To run the PowerShell version you have just built, you can run `Start-DevPowerSh
 
 To run a test, you need to [build the pwsh binaries first](powershell_contributing.md), \(and you need the test-tool, but that is done automatically\). Also note, if you run all tests, that's going to take some time. Good thing there is an easy way!
 
-You could simply run `Start-PSPester` to kick off a test-tool build, and run ALL Pester tests. This would take some time, and this is still not what you want to do when writing extra tests, or improving existing ones. So what do we do instead? We tell `Start-PSPester` which testfile we want to run:
+You could simply run `Start-PSPester` to kick off a test-tool build, and run ALL Pester tests. This would take some time, and this is still not what you want to do when writing extra tests, or improving existing ones. So what do we do instead? We tell `Start-PSPester` which test file we want to run:
 
 `Start-PSPester -Path .\test\powershell\Modules\Microsoft.PowerShell.Core\Get-Command.Tests.ps1`
 
