@@ -172,6 +172,16 @@ Within the PowerShell project, many parts are tested automatically. A big part o
 
 Many Cmdlets could use better or more extensive tests to verify they keep working correctly if someone changes them in the future. So the Pester tests for Cmdlets are kind of a safeguard against regression.
 
+#### Find your way around in the repository
+
+All Pester tests can be found in this folder:  
+`.\test\powershell`
+
+Tests for built-in Cmdlets are here:  
+`.\test\powershell\Modules` Especially the folders named `Microsoft.PowerShell.*`
+
+Tests can also be found by using a search tool like VSCode's `Ctrl+F`. Just search for the Cmdlet you are looking for, and filter for filenames with `*.tests.ps1`
+
 As always, if you want to start working on something in the repo, signal the maintainers what your intentions are, by saying which task you want to take on in the relevant issue. If no issue exists for the work you want to do, create one first.
 
 By creating or improving tests for Cmdlets, you could be preventing future bugs!
@@ -223,7 +233,7 @@ When you have little C\# experience, but have written advanced PowerShell functi
 If you are not super familiar with C\# these tips may help you:
 
 * When you are working on a Cmdlet, you can set _breakpoints_ to be able to step through the code \(see tip about debugging below\)
-* When you need information about where a certain method, property or variable comes from, use `F12` to [navigate to its definition](https://code.visualstudio.com/Docs/editor/editingevolved#_go-to-definition). 
+* When you need information about where a certain method, property or variable comes from, use `F12` to [navigate to its definition](https://code.visualstudio.com/Docs/editor/editingevolved#_go-to-definition).
 
   'Go to definition' is also available from the right-click context menu.
 
@@ -284,23 +294,16 @@ RFC's are discussed in the monthly community call, and are open for comments for
 
 ## Details about contributing to the PowerShell/PowerShell repo
 
-### How to start
+### How to start developing
 
-* Create an issue in the PowerShell repo, where you state that you would like to contribute Pester tests
-* Ask the maintainers if there are any specific Cmdlets that could use improved tests
+* When you have found an issue in the PowerShell repo that you would like to work on, add a comment to it that you would like to take it on. 
 * Fork the PowerShell repository to your own GitHub
 * Clone your fork of the PowerShell repo to your local machine
 * Create a new Git branch for your work
 
-All Pester tests can be found in this folder:  
-`.\test\powershell`
+Tip: If you forget to branch before you start working, `git stash; git stash branch newbranchname` is super super handy. Also: for help after a git mishap: [https://ohshitgit.com](https://ohshitgit.com).
 
-Tests for built-in Cmdlets are here:  
-`.\test\powershell\Modules` Especially the folders named `Microsoft.PowerShell.*`
-
-Tests can also be found by using a search tool like VSCode's `Ctrl+F`. Just search for the Cmdlet you are looking for, and filter for filenames with `*.tests.ps1`
-
-> Tip: If you forget to branch before you start working, `git stash; git stash branch newbranchname` is super super handy. Also:  for help after a git mishap.
+When you open the repository with VS Code, it may detect missing extensions. Install any missing extensions. The C\# extension will load the project file and download other missing dependencies. 
 
 ### Alternative: develop within a container
 
@@ -348,7 +351,7 @@ To run the PowerShell version you have just built, you can run `Start-DevPowerSh
 
 ### How to run a test
 
-To run a test, you need to [build the pwsh binaries first](), \(and you need the test-tool, but that is done automatically\). Also note, if you run all tests, that's going to take some time. Good thing there is an easy way!
+To run a test, you need to [build the pwsh binaries first](powershell_contributing.md), \(and you need the test-tool, but that is done automatically\). Also note, if you run all tests, that's going to take some time. Good thing there is an easy way!
 
 You could simply run `Start-PSPester` to kick off a test-tool build, and run ALL Pester tests. This would take some time, and this is still not what you want to do when writing extra tests, or improving existing ones. So what do we do instead? We tell `Start-PSPester` which testfile we want to run:
 
@@ -376,7 +379,7 @@ To update your GitHub fork, you will first update your local clone, and for that
 
   `git remote add upstream https://github.com/PowerShell/PowerShell.git`
 
-* Make sure there is an entry 'origin' with the url of your own GitHub url: `https://github.com/YOUR_GITHUB_NAME/PowerShell.git` 
+* Make sure there is an entry 'origin' with the url of your own GitHub url: `https://github.com/YOUR_GITHUB_NAME/PowerShell.git`
 
 Make sure you have no uncommitted work on your branch. Stash or revert any uncommitted changes, and checkout to the master branch:
 
@@ -393,7 +396,7 @@ Now we need to check for changes and pull them in.
 So now we have pulled in all changes from the original repo into our clone locally. These changes need to be pushed to your GitHub fork.
 
 * Tell git to push local changes to origin: `git push` or `git push origin/master`
-* You will need to run a _clean_ build after this in order to continue work, as explained [here]().
+* You will need to run a _clean_ build after this in order to continue work, as explained [here](powershell_contributing.md).
 
 For more detailed instructions with screenshots, see [here](https://info.sapien.com/index.php/version-control/github-how-to-update-your-fork).
 
@@ -421,4 +424,5 @@ Once all the CI checks turn green, and your reviewers are satisfied, your PR wil
 
 I hope this blog will help you find your way contributing to PowerShell. It's a great language, and an even greater community. This offers all kinds of chances to learn new things, and meet new like-minded people! Please feel free to reach out to me if you have questions. You can [ping me on Twitter](https://www.twitter.com/Jawz_84), or drop me a message on PowerShell.Slack.com. @jawz\_84.
 
-A special thank you goes to Joel \(Sallow\) Francis and Jelle de Graaf for reviewing!
+A special thank you goes to Joel \(Sallow\) Francis, Jelle de Graaf and Gerbrand van der Weg for reviewing!
+
