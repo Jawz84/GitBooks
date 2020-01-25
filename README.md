@@ -1,4 +1,2 @@
-# GitBooks
-
-blog on gitbooks
+# Blog
 
