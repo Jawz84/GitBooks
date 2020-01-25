@@ -1,3 +1,7 @@
+---
+description: By Jos Koelewijn (@Jawz_84)
+---
+
 # Ten ways of contributing to PowerShell on GitHub
 
 ## Why this blog
