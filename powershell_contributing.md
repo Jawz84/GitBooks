@@ -29,7 +29,7 @@ There are a lot of repositories where you can contribute. I choose to list these
 ## TL/DR;
 
 * I list [ten ways how you can contribute to PowerShell](powershell_contributing.md#ten-ways-to-contribute) on GitHub
-* I share [details about contributing to the PowerShell/PowerShell repo](powershell_contributing.md#details-about-contributing-to-the-powershellpowershell-repo)
+* I share [details about contributing to the PowerShell/PowerShell repo](powershell_contributing.md#details-about-contributing-to-the-powershell-powershell-repo)
 
 ## Ten ways to contribute
 
@@ -305,7 +305,7 @@ RFC's are discussed in the monthly community call, and are open for comments for
 * Clone your fork of the PowerShell repo to your local machine
 * Create a new Git branch for your work
 
-Tip: If you forget to branch before you start working, `git stash; git stash branch newbranchname` is super super handy. Also: for help after a git mishap: [https://ohshitgit.com](https://ohshitgit.com).
+> Tip: If you forget to branch before you start working, `git stash; git stash branch newbranchname` is super super handy. Also: for help after a git mishap: [https://ohshitgit.com](https://ohshitgit.com).
 
 When you open the repository with VS Code, it may detect missing extensions. Install any missing extensions. The C\# extension will load the project file and download other missing dependencies. 
 
