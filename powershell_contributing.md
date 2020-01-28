@@ -307,7 +307,7 @@ RFC's are discussed in the monthly community call, and are open for comments for
 
 > Tip: If you forget to branch before you start working, `git stash; git stash branch newbranchname` is super super handy. Also: for help after a git mishap: [https://ohshitgit.com](https://ohshitgit.com).
 
-When you open the repository with VS Code, it may detect missing extensions. Install any missing extensions. The C\# extension will load the project file and download other missing dependencies. 
+When you open the repository with VS Code, it may detect missing extensions. Install any missing extensions. The C\# extension will load the project file and download other missing dependencies.
 
 ### Alternative: develop within a container
 
@@ -393,11 +393,11 @@ Make sure you have no uncommitted work on your branch. Stash or revert any uncom
 Now we need to check for changes and pull them in.
 
 * Tell git to find out if there are changes in any of its remotes: `git fetch --all -p`
-* Tell git to pull in changes from the 'upstream' remote \(replace the name 'upstream' if necessary\):
+* Tell git to merge in changes from the 'upstream' remote \(replace the name 'upstream' if necessary\):
 
-  `git pull upstream/master`
+  `git merge upstream/master`
 
-So now we have pulled in all changes from the original repo into our clone locally. These changes need to be pushed to your GitHub fork.
+So now we have merged in all changes from the original repo into our clone locally. These changes need to be pushed to your GitHub fork.
 
 * Tell git to push local changes to origin: `git push` or `git push origin/master`
 * You will need to run a _clean_ build after this in order to continue work, as explained [here](powershell_contributing.md).
