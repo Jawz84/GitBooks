@@ -1,5 +1,5 @@
 ---
-description: By Jos Koelewijn (@Jawz_84)
+description: 'By Jos Koelewijn ([@Jawz_84](https://twitter.com/jawz_84))'
 ---
 
 # Ten ways of contributing to PowerShell on GitHub
