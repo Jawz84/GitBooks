@@ -4,7 +4,7 @@ description: By Jos Koelewijn (@Jawz_84)
 
 # Make objects show and behave themselves like you want them to
 
-Powershell is good with objects, that is well known. 
+PowerShell is good with objects, that is well known. 
 A lesser known fact is that you can dynamically define what you want an object to look like in your default output.
 What's also less known is that you can extend existing objects. 
 
@@ -13,9 +13,72 @@ Let's take a closer look at these features and how to use them to our advantage.
 ## Dynamically set the Default Display Property Set
 
 What does that mean?
+Let's look at an example.
 
-When you run `Get-Date`, it tells you the 
+When you run `Get-Service -Name fax`, you get this:
 
+```
+Status   Name               DisplayName
+------   ----               -----------
+Stopped  Fax                fax
+```
+
+Only three properties are displayed. 
+But there are more properties:
+
+```powershell
+Get-Service -Name fax | Get-Member -MemberType Properties
+
+
+   TypeName: System.Service.ServiceController#StartupType
+
+Name                MemberType    Definition
+----                ----------    ----------
+Name                AliasProperty Name = ServiceName
+RequiredServices    AliasProperty RequiredServices = ServicesDependedOn
+BinaryPathName      Property      System.String {get;set;}
+CanPauseAndContinue Property      bool CanPauseAndContinue {get;}
+CanShutdown         Property      bool CanShutdown {get;}
+CanStop             Property      bool CanStop {get;}
+Container           Property      System.ComponentModel.IContainer Container {get;}
+DelayedAutoStart    Property      System.Boolean {get;set;}
+DependentServices   Property      System.ServiceProcess.ServiceController[] DependentServices {get;}
+Description         Property      System.String {get;set;}
+DisplayName         Property      string DisplayName {get;set;}
+MachineName         Property      string MachineName {get;set;}
+ServiceHandle       Property      System.Runtime.InteropServices.SafeHandle ServiceHandle {get;}
+ServiceName         Property      string ServiceName {get;set;}
+ServicesDependedOn  Property      System.ServiceProcess.ServiceController[] ServicesDependedOn {get;}
+ServiceType         Property      System.ServiceProcess.ServiceType ServiceType {get;}
+Site                Property      System.ComponentModel.ISite Site {get;set;}
+StartType           Property      System.ServiceProcess.ServiceStartMode StartType {get;}
+StartupType         Property      Microsoft.PowerShell.Commands.ServiceStartupType {get;set;}
+Status              Property      System.ServiceProcess.ServiceControllerStatus Status {get;}
+UserName            Property      System.String {get;set;}
+```
+
+But most of these properties are hidden by default, to provide end users with nice concise views.
+How does PowerShell do this?
+By using metadata per type, type data.
+For a lot of types, PowerShell has metadata on which properties to display by default. 
+We can look at this by using `Get-TypeData`. 
+Remember the type name mentioned in the output of `Get-Member` above was with `System.Service.ServiceController#StartupType`?
+Let's look up it's type data:
+
+```powershell
+Get-TypeData -TypeName system*servicecontroller* | Select-Object TypeName, {$_.DefaultDisplayPropertySet.ReferencedProperties}
+
+TypeName                                $_.defaultdisplaypropertyset.referencedproperties
+--------                                -------------------------------------------------
+System.ServiceProcess.ServiceController {Status, Name, DisplayName}
+```
+
+
+
+
+```powershell
+(Get-TypeData -TypeName System.ServiceProcess.ServiceController).DefaultDisplayPropertySet
+```
 
 
 ```powershell
