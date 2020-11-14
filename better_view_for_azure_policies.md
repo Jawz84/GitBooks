@@ -1,3 +1,7 @@
+---
+description: By Jos Koelewijn (@Jawz_84)
+---
+
 # Create human readable default view for Azure Policies
 
 Working with Azure policies in PowerShell can be annoying because the policy objects are by default not very human readable. 
