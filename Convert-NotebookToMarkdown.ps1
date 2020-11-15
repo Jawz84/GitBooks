@@ -48,4 +48,12 @@ $file = $file -replace "(?<=#{2,4} (\w\s?)*)`n", "`n`n"
 # make sure the heading at the start of the file gets an empty line below it as well
 $file = $file -replace "(?<=\A# (\w\s?)*)`n", "`n`n"
 
+$file = $file -replace "\A#", @"
+---
+description: By Jos Koelewijn (@Jawz_84)
+---
+
+#
+"@
+
 $file | Set-Content $convertedFileName -Force
