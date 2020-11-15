@@ -48,6 +48,7 @@ $file = $file -replace "(?<=#{2,4} (\w\s?)*)`n", "`n`n"
 # make sure the heading at the start of the file gets an empty line below it as well
 $file = $file -replace "(?<=\A# (\w\s?)*)`n", "`n`n"
 
+# add header
 $file = $file -replace "\A#", @"
 ---
 description: By Jos Koelewijn (@Jawz_84)
@@ -55,5 +56,11 @@ description: By Jos Koelewijn (@Jawz_84)
 
 #
 "@
+
+# add footer
+$file = $file -replace "`n\Z", @"
+`n`nI hope you found this useful. Please feel free to reach out to me if you have questions. You can [ping me on Twitter](https://www.twitter.com/Jawz_84), or drop me a message on the PowerShell Discord server.`n`n
+"@
+
 
 $file | Set-Content $convertedFileName -Force
