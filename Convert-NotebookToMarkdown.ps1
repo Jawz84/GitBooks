@@ -40,14 +40,12 @@ $file = $file -replace "(?<=`n)`n\s{5}`n", "`n``````text`n"
 # replace end of indented code block with code fence close
 $file = $file -replace "`n(\s{5}`n)+", "`n```````n`n"
 
-# make sure headings get an empty line below them. 
+# make sure headings get an empty line above and below them. 
 # we only do this for headings with 2 #-signs or more, otherwise we would affect powershell comments too
+$file = $file -replace "(?<!`n)`n(?=##+ )", "`n`n"
 $file = $file -replace "(?<=#{2,4} (\w\s?)*)`n", "`n`n"
 
 # make sure the heading at the start of the file gets an empty line below it as well
 $file = $file -replace "(?<=\A# (\w\s?)*)`n", "`n`n"
 
-$condensedConvertedFileName = $convertedFileName.Replace(".md", ".condensed.md")
-
-$file | Set-Content $condensedConvertedFileName -Force
-Get-Content $condensedConvertedFileName
+$file | Set-Content $convertedFileName -Force
