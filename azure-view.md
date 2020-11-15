@@ -81,9 +81,10 @@ Get-AzPolicyDefinition -name 0473574d-2d43-4217-aefe-941fcdf7e684 | select *
 
 ## Some remarks
 
-tldr; this trick will only work for types for which there is no format data available.
+TLDR; this trick will only work for types for which there is no format data available.
 
 PowerShell has a formatting system where it looks up how to format a certain type of object. This information can be found with `Get-FormatData`. A lot of it is built in in PowerShell. If you want to provide format data to PowerShell, you will need to write a `*.format.ps1xml` file, and import it with `Update-FormatData`. A bit tedious.
 
 I wanted something easier, so I used a trick: When there is no format data available for a certain type, PowerShell looks for hints in the Type system. You can find that information with `Get-TypeData`. The `DefaultDisplayPropertySet` property can hold hints that PowerShell will use when there is no format data. That's what I have leveraged here, so I don't need to write a `*.format.ps1xml-file`.
 
+I hope you found this useful. Please feel free to reach out to me if you have questions. You can [ping me on Twitter](https://www.twitter.com/Jawz_84), or drop me a message on the PowerShell Discord server.`n`n
