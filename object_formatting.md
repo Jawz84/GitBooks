@@ -174,7 +174,7 @@ At the time of writing, there is [an open issue](https://github.com/PowerShell/P
 
 ### Types without Format data loaded \(the easy way\)
 
-Types for wich there is no preexisting Format data in the current session are the easiest because there we can directly set the default view by using the `DefaultDisplayPropertySet` parameter of `Update-TypeData`.
+Types for which there is no preexisting Format data in the current session are the easiest because there we can directly set the default view by using the `DefaultDisplayPropertySet` parameter of `Update-TypeData`.
 
 An example with a `PSCustomObject`:
 
