@@ -60,7 +60,7 @@ When you are done writing and testing, you can save your work. When you come bac
 
 ### Exporting a Notebook to MarkDown
 
-To export your Notebook including code blocks and their output to MarkDown, use the Anaconda PowerShell  console and run this:
+To export your Notebook including code blocks and their output to MarkDown, use the Anaconda PowerShell console and run this:
 
 ```text
 # From the Anaconda PowerShell console
