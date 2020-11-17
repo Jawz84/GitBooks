@@ -5,6 +5,7 @@ description: By Jos Koelewijn (@Jawz_84)
 # I started authoring my blog posts in .NET Interactive \(Jupyter\) Notebooks
 
 I write my blog post in a .NET Interactive \(Jupyter\) Notebook, convert it to MarkDown and upload it to my GitBook blog via GitHub.
+AND I LOVE IT!
 
 ![Screenshot](screenshot.jpg)
 
