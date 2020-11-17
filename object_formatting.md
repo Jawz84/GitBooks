@@ -1,5 +1,5 @@
 ---
-description: 'By Jos Koelewijn (@Jawz_84)'
+description: By Jos Koelewijn (@Jawz_84)
 ---
 
 # Using the PowerShell formatting system to your advantage
