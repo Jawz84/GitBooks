@@ -7,15 +7,17 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-# You'll need Anaconda3, and install nbconvert: via `conda install nbconvert`
-
-if ($env:Path -notmatch "anaconda3") {
-    $env:Path += ";${HOME}\anaconda3\Scripts"
-}
-
 $convertedFileName = $NotebookFilePath.Replace(".ipynb", ".md") 
 
-jupyter nbconvert $NotebookFilePath --to markdown
+# You'll need Anaconda3, and install nbconvert: via `conda install nbconvert`
+# Anaconda Powershell console is needed to run jupyter commands safely.
+# The Anaconda PowerShell console on windows does this under the hood:
+# I only added the convert step, and changed the call to Powershell.exe to pwsh to make it faster.
+$command = "& '${HOME}\anaconda3\shell\condabin\conda-hook.ps1' ;" + 
+           "conda activate '${HOME}\anaconda3';" + 
+           # This line is to actually convert the jupyter file, within the Anaconda Console
+           "jupyter nbconvert $NotebookFilePath --to HTML"
+pwsh -ExecutionPolicy ByPass -Command $command
 
 $file = Get-Content $convertedFileName -Raw
 
