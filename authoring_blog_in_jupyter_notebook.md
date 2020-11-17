@@ -6,6 +6,8 @@ description: By Jos Koelewijn (@Jawz_84)
 
 I write my blog post in a .NET Interactive \(Jupyter\) Notebook, convert it to MarkDown and upload it to my GitBook blog via GitHub.
 
+![Screenshot](screenshot.jpg)
+
 ## Why
 
 **Reason one**: It really helps me reach flow state.
