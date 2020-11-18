@@ -34,6 +34,9 @@ Prerequisites for authoring and running a .NET Interactive Notebook
 
 ### Export to MarkDown
 
+> UPDATE:   
+> @dfinke Doug Finke wrote a fine module called `PowerShellNotebook` that has a command `ConvertFrom-NotebookToMarkdown` that works great. I will be rewriting my scripts accordingly
+
 At this time, if you want to export to MarkDown, you will need Python, Jupyter and a Jupyter tool called `nbconvert`. I have filed a [Feature Request to consider adding an `Export to <other file formats>`](https://github.com/dotnet/interactive/issues/885). Upvoting the issue tells the maintainers whether or not more people would like this feature. The easiest way to get Python + Jupyter, is to use Anaconda.
 
 * Install [Anaconda](https://www.anaconda.com/products/individual) as single user.
@@ -59,6 +62,9 @@ All your code blocks in the document are connected to the same session, a 'kerne
 When you are done writing and testing, you can save your work. When you come back to your work later, you will notice you cannot open a .ipynb file directly in VSCode, it will display the underlying JSON file. To re-open a Notebook, right click the .ipynb file in VSCode and choose `Open with..` from the context menu, and select `.NET Interactive for Jupyter Notebooks` from the drop down menu. You can use the cog to the right of that to select your default way of opening .ipynb files if you like.
 
 ### Exporting a Notebook to MarkDown
+
+> UPDATE:   
+> @dfinke Doug Finke wrote a fine module called `PowerShellNotebook` that has a command `ConvertFrom-NotebookToMarkdown` that works great. I will be rewriting my scripts accordingly
 
 To export your Notebook including code blocks and their output to MarkDown, use the Anaconda PowerShell console and run this:
 
