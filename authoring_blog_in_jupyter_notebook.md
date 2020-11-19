@@ -32,23 +32,6 @@ Prerequisites for authoring and running a .NET Interactive Notebook
 >
 > — Jon Sequeira \(@jonsequitur\) [November 16, 2020](https://twitter.com/jonsequitur/status/1328404886917058561?ref_src=twsrc%5Etfw)
 
-### Export to MarkDown
-
-> UPDATE:   
-> @dfinke Doug Finke wrote a fine module called `PowerShellNotebook` that has a command `ConvertFrom-NotebookToMarkdown` that works great. I will be rewriting my scripts accordingly
-
-At this time, if you want to export to MarkDown, you will need Python, Jupyter and a Jupyter tool called `nbconvert`. I have filed a [Feature Request to consider adding an `Export to <other file formats>`](https://github.com/dotnet/interactive/issues/885). Upvoting the issue tells the maintainers whether or not more people would like this feature. The easiest way to get Python + Jupyter, is to use Anaconda.
-
-* Install [Anaconda](https://www.anaconda.com/products/individual) as single user.
-* After that, open the Anaconda Powershell console and install `nbconvert` with:
-
-```text
-# From the Anaconda PowerShell console
-conda install nbconvert --yes
-```
-
-Now we can use `nbconvert` with `jupyter` from the Anaconda console to convert our `.ipynb` to MarkDown.
-
 ### Writing a Notebook
 
 In VSCode, press F1 and seach for the command `> .NET interactive: create new blank notebook`. The first time you run this, it will download some more prerequisites automatically in the background.
@@ -63,19 +46,25 @@ When you are done writing and testing, you can save your work. When you come bac
 
 ### Exporting a Notebook to MarkDown
 
-> UPDATE:   
-> @dfinke Doug Finke wrote a fine module called `PowerShellNotebook` that has a command `ConvertFrom-NotebookToMarkdown` that works great. I will be rewriting my scripts accordingly
+When searching how to convert Jupyter Notebooks, you will find references to `Anaconda` and `jupyter nbconvert`. 
+Anaconda is quite a big dependency just for converting a Notebook to MarkDown. 
+That is why I am very happy that [Doug Finke](https://twitter.com/dfinke) wrote a fine module called [PowerShellNotebook](https://github.com/dfinke/PowerShellNotebook) that has a command `ConvertFrom-NotebookToMarkdown` that works great. 
 
-To export your Notebook including code blocks and their output to MarkDown, use the Anaconda PowerShell console and run this:
+You can install it from the PSGallery:
 
-```text
-# From the Anaconda PowerShell console
-jupyter nbconvert C:\Users\Jos\Desktop\Untitled-1.ipynb --to MarkDown
+```powershell
+Install-Module PowershellNotebook
 ```
 
-The resulting MarkDown file is not super neat. That's why I use a cleanup script with some regex to tidy it up after conversion.
+Now we can use `ConvertFrom-NotebookToMarkdown` to convert our `.ipynb` to MarkDown:
 
-You can find the script I use to clean things up here: [MarkDown cleaner on GitHub](https://github.com/Jawz84/GitBooks/blob/master/Convert-NotebookToMarkDown.ps1). Usually I only have to do some minor tweaks after running that. When I am happy with it, I upload the post to my GitBook blog via GitHub.
+```powershell
+ConvertFrom-NotebookToMarkdown -NotebookName .\authoring_blog_in_jupyter_notebook.ipynb
+```
+
+I like adding a header and a footer, and cleaning up the output just a bit further. That's why I use a cleanup script with some regex to tidy it up after conversion.
+
+You can find the script I use to clean things up here: [MarkDown cleaner on GitHub](https://github.com/Jawz84/GitBooks/blob/master/Convert-NotebookToMarkDown.ps1). 
+When I am happy with the result, I upload the post to my GitBook blog via GitHub.
 
 I hope you found this useful. Please feel free to reach out to me if you have questions. You can [ping me on Twitter](https://www.twitter.com/Jawz_84), or drop me a message on the PowerShell Discord server.
-
