@@ -66,7 +66,50 @@ You can find the script I use to clean things up here: [MarkDown cleaner on GitH
 
 ### Exploring PowerShellNotebook module
 
-gcm -Module PowerShellNotebook \| select -exp name \| %{ get-help $\_ \| select name, synopsis}
+The PowerShellNotebook module can do a lot more than just converting to MarkDown:
+
+```powershell
+Get-Command -Module PowerShellNotebook | 
+    Select-Object -ExpandProperty Name | 
+    Foreach-Object { 
+        Get-Help $_ | Select-Object Name, { $_.Synopsis.Trim() }
+    }
+```
+
+```text
+Name                              $_.synopsis.trim()
+----                              ------------------
+Add-NotebookCode                  Add-NotebookCode adds PowerShell code to a code block
+Add-NotebookMarkdown              Add-NotebookMarkdown adds Markdown to a markdown block
+Convert-MarkdownToNoteBook        Convert a markdown file to an interactive PowerShell Notebook
+ConvertFrom-NotebookToMarkdown    Take and exiting PowerShell Notebook and convert it to markdown
+ConvertTo-PowerShellNoteBook      Convert PowerShell scripts (ps1 files) to interactive notebooks (ipynb files)
+ConvertTo-SQLNoteBook
+Export-AsPowerShellNotebook       Takes strings of PowerShell and creates and interactive Jupyter Notebook. Try exporting your PowerShell history to a notebook. Check the examples
+Export-NotebookToPowerShellScript Exports all code blocks from a PowerShell Notebook to a PowerShell script
+Export-NotebookToSqlScript        Exports all code blocks from a SQL Notebook to a SQL script
+Find-ParameterizedCell            Reads a Jupyter Notebook and returns all cells with a tag -eq to 'parameters'
+Get-Notebook                      Get-Notebook reads the metadata of a single (or folder of) Jupyter Notebooks
+Get-NotebookContent               Get-NotebookContents reads the contents of a Jupyter Notebooks
+Get-NotebookDisplayData
+Get-ParameterInsertionIndex       Get-ParameterInsertionIndex [-InputNotebook] <Object> [<CommonParameters>]
+Get-ParsedSql                     Get-ParsedSql [[-ScriptPath] <Object>]
+Get-ParsedSqlOffsets              Get-ParsedSqlOffsets [[-ScriptPath] <Object>] [[-IncludeGaps] <Object>] [-ExtractCommentsInsideBatches] [<CommonParameters>]
+Invoke-ExecuteNotebook            Adds a new cell tagged with injected-parameters with input parameters in order to overwrite the values in parameters. …
+Invoke-PowerShellNotebook         Invoke-PowerShellNotebook executes all the PowerShell code blocks in a PowerShell Notebook.
+loadScriptDomModules              loadScriptDomModules
+New-CodeCell                      New-CodeCell [-Source] <Object> [<CommonParameters>]
+New-GistNotebook                  New-GistNotebook [-contents] <Object> [-fileName] <Object> [[-gistDescription] <Object>] [<CommonParameters>]
+New-PSNotebook                    Creates a new PowerShell Notebook that can be returned as text or saves as a `ipynb` file.
+New-PSNotebookRunspace            New-PSNotebookRunspace instantiates the PSNotebookRunspace
+New-SQLNotebook                   Creates a new PowerShell Notebook that can be returned as text or saves as a `ipynb` file.
+Test-AzureBlobStorageUrl          Test-AzureBlobStorageUrl [[-Url] <Object>]
+Test-HasParameterizedCell         Test-HasParameterizedCell [[-InputNotebook] <Object>] [<CommonParameters>]
+Test-Uri                          Test-Uri [[-FullName] <Object>]
+```
+
+I am thinking to integrate `Invoke-PowerShellNotebook` into my cleanup script to refresh all PowerShell examples before converting. 
+Also notice the `Invoke-ExecuteNotebook` command. Interesting stuff!
 
 I hope you found this useful. Please feel free to reach out to me if you have questions. You can [ping me on Twitter](https://www.twitter.com/Jawz_84), or drop me a message on the PowerShell Discord server.
 
