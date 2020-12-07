@@ -34,7 +34,7 @@ Prerequisites for authoring and running a .NET Interactive Notebook
 
 In VSCode, press F1 and seach for the command `> .NET interactive: create new blank notebook`. The first time you run this, it will download some more prerequisites automatically in the background.
 
-In a Notebook, you can choose between insterting a MarkDown and Code block. You can also convert between the two, split and merge them etc.
+In a Notebook, you can choose between inserting a MarkDown and a Code block. You can also convert between the two, split and merge them, etc.
 
 A Code Block will run a certain language. Set it to `PowerShell (.NET Interactive)` if you want to use PowerShell. Use `Ctrl-Alt-Enter` to run a cell.
 
@@ -42,7 +42,7 @@ All your code blocks in the document are connected to the same session, a 'kerne
 
 `> .NET Interactive: Restart the current notebook's kernel`
 
-When you are done writing and testing, you can save your work. When you come back to your work later, you will notice you cannot open a .ipynb file directly in VSCode, it will display the underlying JSON file. To re-open a Notebook, right click the .ipynb file in VSCode and choose `Open with..` from the context menu, and select `.NET Interactive for Jupyter Notebooks` from the drop down menu. You can use the cog to the right of that to select your default way of opening .ipynb files if you like.
+When you are done writing and testing, you can save your work. When you come back to your work later, you will notice you cannot open a .ipynb file directly in VSCode, it will display the underlying JSON file. To re-open a Notebook, right click the .ipynb file in VSCode and choose `Open With...` from the context menu, and select `.NET Interactive for Jupyter Notebooks` from the drop down menu. You can use the cog to the right of that to select your default way of opening .ipynb files if you like.
 
 ### Exporting a Notebook to MarkDown
 
